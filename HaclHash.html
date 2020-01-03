@@ -198,7 +198,8 @@ to an array of bytes of length <code class="docutils literal notranslate"><span 
 The last argument is a pointer <code class="docutils literal notranslate"><span class="pre">dst</span></code> to an array of bytes where
 the result will be written. All pointers (<code class="docutils literal notranslate"><span class="pre">input</span></code>, <code class="docutils literal notranslate"><span class="pre">dst</span></code>) must be
 live (non-null, non-freed). For SHA-256, <code class="docutils literal notranslate"><span class="pre">dst</span></code> must point to an array
-allocated with (at least) 32 bytes, for SHA-384, it must have 48 bytes, and for SHA-512 it must have 64 bytes. The <code class="docutils literal notranslate"><span class="pre">input</span></code> array is limited to 2^32 bytes.</p>
+allocated with (at least) 32 bytes, for SHA-384, it must have 48 bytes, and for
+SHA-512 it must have 64 bytes. The <code class="docutils literal notranslate"><span class="pre">input</span></code> array is limited to 2^32 bytes.</p>
 </div>
 <div class="section" id="sha-3">
 <h2>SHA-3<a class="headerlink" href="#sha-3" title="Permalink to this headline">¶</a></h2>
@@ -258,8 +259,10 @@ an <code class="docutils literal notranslate"><span class="pre">outputByteLen</s
 </div>
 <div class="section" id="other-hash-functions-blake-2-md5-sha-1">
 <h2>Other Hash Functions: Blake-2, MD5, SHA-1<a class="headerlink" href="#other-hash-functions-blake-2-md5-sha-1" title="Permalink to this headline">¶</a></h2>
-<p>A development branch of HACL* contains verified implementations of Blake2s and Blake2b. Contact the HACL* maintainers if you wish to use these implementations.</p>
-<p>HACL* also includes implementations of MD5 and SHA1 for backwards compatibility, but we strongly recommend against using these algorithms.</p>
+<p>A development branch of HACL* contains verified implementations of Blake2s and
+Blake2b. Contact the HACL* maintainers if you wish to use these implementations.</p>
+<p>HACL* also includes implementations of MD5 and SHA1 for backwards compatibility,
+but we strongly recommend against using these algorithms.</p>
 </div>
 </div>
 

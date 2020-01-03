@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>HACL*: High Assurance Cryptographic Library &mdash; HACL* and EverCrypt Manual  documentation</title>
+  <title>A High Assurance Cryptographic Library &mdash; HACL* and EverCrypt Manual  documentation</title>
   
 
   
@@ -135,7 +135,7 @@
     
       <li><a href="#">Docs</a> &raquo;</li>
         
-      <li>HACL*: High Assurance Cryptographic Library</li>
+      <li>A High Assurance Cryptographic Library</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -154,22 +154,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="hacl-high-assurance-cryptographic-library">
-<h1>HACL*: High Assurance Cryptographic Library<a class="headerlink" href="#hacl-high-assurance-cryptographic-library" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="a-high-assurance-cryptographic-library">
+<h1>A High Assurance Cryptographic Library<a class="headerlink" href="#a-high-assurance-cryptographic-library" title="Permalink to this headline">¶</a></h1>
 <p>HACL* is a formally verified cryptographic library written in <a class="reference external" href="https://github.com/FStarLang/FStar">F*</a> and compiled to C, developed as a collaboration
 between the <a class="reference external" href="http://prosecco.inria.fr">Prosecco</a> team at INRIA
 Paris, <a class="reference external" href="http://research.microsoft.com">Microsoft Research</a>, and
 <a class="reference external" href="https://www.csd.cs.cmu.edu/">Carnegie Mellon University</a>. The
 library, its applications, and the verification tools it relies on are
 being actively developed and maintained as part of <a class="reference external" href="https://github.com/project-everest">Project Everest</a>.</p>
-<p>HACL* is an open source project hosted at <a class="reference external" href="https://github.com/project-everest/hacl-star/">hacl-star</a>.  This
-repository also contains verified assembly code for cryptographic
-primitives from the <a class="reference external" href="https://github.com/project-everest/vale/">Vale</a>
-project. The full crypto library is distributed as a collection of C
-and assembly files that can either be directly used as standalone components
-or via a verified cryptographic provider called EverCrypt.</p>
-<p>This manual describes the various cryptographic code components in
-the HACL* repository, focusing mainly on the HACL* and EverCrypt APIs.</p>
+<p>EverCrypt is a cryptographic <em>provider</em> that into a single library combines
+HACL*, described above, and ValeCrypto, a collection of verified assembly
+code for cryptographic primitives.</p>
+<p>This manual describes the HACL* and EverCrypt APIs. Read
+<a class="reference internal" href="HaclValeEverCrypt.html#hacl-vale-evercrypt"><span class="std std-ref">HACL*, Vale, and EverCrypt</span></a> for a detailed description of how they relate to each
+other.</p>
+<p>HACL* is an open source project hosted at <a class="reference external" href="https://github.com/project-everest/hacl-star/">hacl-star</a>, along with <a class="reference external" href="https://github.com/project-everest/hacl-star/tree/master/vale">ValeCrypto</a>
+and <a class="reference external" href="https://github.com/project-everest/hacl-star/tree/master/evercrypt">EverCrypt</a>.</p>
+<p>HACL*, Vale and EverCrypt are distributed together as a collection of C and
+assembly files. These can be used either as individual components, or as a
+full-fledged library through the EverCrypt provider.</p>
 <p>Code from HACL* has been incorporated into <a class="reference external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1387183">Firefox</a>, the Windows
 kernel, the Linux kernel, the <a class="reference external" href="https://www.reddit.com/r/tezos/comments/8hrsz2/tezos_switches_cryptographic_libraries_from/">Tezos blockchain</a>,
 the Microsoft MSQuic implementation of the QUIC protocol, and the
@@ -213,9 +216,12 @@ or EverCrypt, initiate a conversation with the <a class="reference external" hre
 <li class="toctree-l1"><a class="reference internal" href="EverCryptDoc.html">EverCrypt APIs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="EverCryptAutoConfig.html">CPU autodetection (<code class="docutils literal notranslate"><span class="pre">EverCrypt_AutoConfig2.h</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EverCryptAEAD.html">AEAD (<code class="docutils literal notranslate"><span class="pre">EverCrypt_AEAD.h</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EverCryptCTR.html">CTR-mode encryption (<code class="docutils literal notranslate"><span class="pre">EverCrypt_CTR.h</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EverCryptHash.html">Hashing (<code class="docutils literal notranslate"><span class="pre">EverCrypt_Hash.h</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EverCryptHMAC.html">HMAC (<code class="docutils literal notranslate"><span class="pre">EverCrypt_HMAC.h</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EverCryptHKDF.html">HKDF (<code class="docutils literal notranslate"><span class="pre">EverCrypt_HKDF.h</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EverCryptDRBG.html">HMAC-DRBG (<code class="docutils literal notranslate"><span class="pre">EverCrypt_DRBG.h</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EverCryptNonAgile.html">Non-agile APIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EverCryptDeprecated.html">Deprecated block cipher API (<code class="docutils literal notranslate"><span class="pre">EverCrypt_Cipher.h</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EverCryptLegacy.html">Legacy EverCrypt headers (<code class="docutils literal notranslate"><span class="pre">EverCrypt.h</span></code>, <code class="docutils literal notranslate"><span class="pre">EverCrypt_Hacl.h</span></code>, <code class="docutils literal notranslate"><span class="pre">EverCrypt_Vale.h</span></code>)</a></li>
 </ul>

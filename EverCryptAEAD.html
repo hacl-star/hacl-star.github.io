@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Hashing (EverCrypt_Hash.h)" href="EverCryptHash.html" />
+    <link rel="next" title="CTR-mode encryption (EverCrypt_CTR.h)" href="EverCryptCTR.html" />
     <link rel="prev" title="CPU autodetection (EverCrypt_AutoConfig2.h)" href="EverCryptAutoConfig.html" /> 
 </head>
 
@@ -95,9 +95,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#encryption-and-decryption">Encryption and decryption</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="EverCryptCTR.html">CTR-mode encryption (<code class="docutils literal notranslate"><span class="pre">EverCrypt_CTR.h</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EverCryptHash.html">Hashing (<code class="docutils literal notranslate"><span class="pre">EverCrypt_Hash.h</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EverCryptHMAC.html">HMAC (<code class="docutils literal notranslate"><span class="pre">EverCrypt_HMAC.h</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EverCryptHKDF.html">HKDF (<code class="docutils literal notranslate"><span class="pre">EverCrypt_HKDF.h</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EverCryptDRBG.html">HMAC-DRBG (<code class="docutils literal notranslate"><span class="pre">EverCrypt_DRBG.h</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EverCryptNonAgile.html">Non-agile APIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EverCryptDeprecated.html">Deprecated block cipher API (<code class="docutils literal notranslate"><span class="pre">EverCrypt_Cipher.h</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EverCryptLegacy.html">Legacy EverCrypt headers (<code class="docutils literal notranslate"><span class="pre">EverCrypt.h</span></code>, <code class="docutils literal notranslate"><span class="pre">EverCrypt_Hacl.h</span></code>, <code class="docutils literal notranslate"><span class="pre">EverCrypt_Vale.h</span></code>)</a></li>
 </ul>
@@ -196,7 +199,9 @@
 <div class="section" id="state-management">
 <h2>State management<a class="headerlink" href="#state-management" title="Permalink to this headline">¶</a></h2>
 <p>Clients are first expected to allocate persistent state, which performs key
-expansion and precomputes internal data for AES-GCM.</p>
+expansion and precomputes internal data for AES-GCM. <code class="docutils literal notranslate"><span class="pre">EverCrypt.AEAD</span></code> supports
+IV reduction, meaning that IV lengths must satisfy the <code class="docutils literal notranslate"><span class="pre">iv_length</span></code> predicate
+in <code class="docutils literal notranslate"><span class="pre">Spec.Agile.AEAD.fsti</span></code>.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
 <span class="n">EverCrypt_Error_error_code</span>
 <span class="nf">EverCrypt_AEAD_create_in</span><span class="p">(</span><span class="n">Spec_Agile_AEAD_alg</span> <span class="n">a</span><span class="p">,</span> <span class="n">EverCrypt_AEAD_state_s</span> <span class="o">**</span><span class="n">dst</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k1</span><span class="p">);</span>
@@ -287,7 +292,7 @@ to perform a run-time check!</strong></p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="EverCryptHash.html" class="btn btn-neutral float-right" title="Hashing (EverCrypt_Hash.h)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="EverCryptCTR.html" class="btn btn-neutral float-right" title="CTR-mode encryption (EverCrypt_CTR.h)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="EverCryptAutoConfig.html" class="btn btn-neutral float-left" title="CPU autodetection (EverCrypt_AutoConfig2.h)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
