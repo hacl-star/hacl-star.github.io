@@ -101,8 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="EverCryptHKDF.html">HKDF (<code class="docutils literal notranslate"><span class="pre">EverCrypt_HKDF.h</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EverCryptDRBG.html">HMAC-DRBG (<code class="docutils literal notranslate"><span class="pre">EverCrypt_DRBG.h</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EverCryptNonAgile.html">Non-agile APIs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EverCryptDeprecated.html">Deprecated block cipher API (<code class="docutils literal notranslate"><span class="pre">EverCrypt_Cipher.h</span></code>)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EverCryptLegacy.html">Legacy EverCrypt headers (<code class="docutils literal notranslate"><span class="pre">EverCrypt.h</span></code>, <code class="docutils literal notranslate"><span class="pre">EverCrypt_Hacl.h</span></code>, <code class="docutils literal notranslate"><span class="pre">EverCrypt_Vale.h</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EverCryptDeprecated.html">Deprecated APIs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="API.html">Which API to use</a></li>
@@ -177,10 +176,15 @@
 <h1>CTR-mode encryption (<code class="docutils literal notranslate"><span class="pre">EverCrypt_CTR.h</span></code>)<a class="headerlink" href="#ctr-mode-encryption-evercrypt-ctr-h" title="Permalink to this headline">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
+<p>Using encryption without a MAC is potentially <strong>dangerous</strong>. We recommend users
+stick with the AEAD API.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p><strong>This API is a work-in-progress and is not fully verified.</strong> If you need it
 for something serious, let us know and we’ll prioritize.</p>
 <ul class="simple">
-<li><p>It doesn’t multiplex across all implementations of Chacha-Poly</p></li>
+<li><p>It doesn’t multiplex across all implementations of Chacha</p></li>
 <li><p>It doesn’t offer complete encryption, only block-by-block</p></li>
 <li><p>It has no streaming API</p></li>
 </ul>
@@ -188,7 +192,7 @@ for something serious, let us know and we’ll prioritize.</p>
 <p>This API is:</p>
 <ul class="simple">
 <li><p><strong>agile</strong></p></li>
-<li><p><strong>multiplexing</strong>: portable C (Chacha-Poly); ADX + BMI2 (AES128-GCM, AES256-GCM)</p></li>
+<li><p><strong>multiplexing</strong>: portable C (Chacha); AESNI + CLMUL (AES128, AES256)</p></li>
 <li><p><strong>stateful</strong></p></li>
 </ul>
 <p>Possible values for the agility argument (<code class="docutils literal notranslate"><span class="pre">Hacl_Spec.h</span></code>) :</p>

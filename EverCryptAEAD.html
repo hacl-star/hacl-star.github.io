@@ -101,8 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="EverCryptHKDF.html">HKDF (<code class="docutils literal notranslate"><span class="pre">EverCrypt_HKDF.h</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EverCryptDRBG.html">HMAC-DRBG (<code class="docutils literal notranslate"><span class="pre">EverCrypt_DRBG.h</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EverCryptNonAgile.html">Non-agile APIs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EverCryptDeprecated.html">Deprecated block cipher API (<code class="docutils literal notranslate"><span class="pre">EverCrypt_Cipher.h</span></code>)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EverCryptLegacy.html">Legacy EverCrypt headers (<code class="docutils literal notranslate"><span class="pre">EverCrypt.h</span></code>, <code class="docutils literal notranslate"><span class="pre">EverCrypt_Hacl.h</span></code>, <code class="docutils literal notranslate"><span class="pre">EverCrypt_Vale.h</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EverCryptDeprecated.html">Deprecated APIs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="API.html">Which API to use</a></li>
@@ -179,7 +178,7 @@
 <ul class="simple">
 <li><p><strong>agile</strong></p></li>
 <li><p><strong>multiplexing</strong>: portable C (Chacha-Poly only); AVX (Chacha-Poly); AVX2
-(Chacha-Poly); ADX + BMI2 (AES128-GCM, AES256-GCM)</p></li>
+(Chacha-Poly); AESNI + CLMUL (AES128-GCM, AES256-GCM)</p></li>
 <li><p><strong>stateful</strong></p></li>
 </ul>
 <p>Possible values for the agility argument (<code class="docutils literal notranslate"><span class="pre">Hacl_Spec.h</span></code>) :</p>
