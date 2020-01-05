@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Hashing: SHA-2, SHA-3" href="HaclHash.html" />
+    <link rel="next" title="NaCl API: Box and SecretBox" href="HaclNaCl.html" />
     <link rel="prev" title="ECDH: X25519" href="HaclECDH.html" /> 
 </head>
 
@@ -89,6 +89,7 @@
 <li class="toctree-l1"><a class="reference internal" href="General.html">Digging into the F* source code</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="HaclDoc.html">HACL APIs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="HaclAEAD.html">AEAD: Chacha20-Poly1305</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HaclHash.html">Hashing: SHA-2, SHA-3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HaclECDH.html">ECDH: X25519</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Signatures: Ed25519</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#key-generation">Key Generation</a></li>
@@ -98,7 +99,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#other-signature-algorithms-ecdsa-with-p-256">Other Signature Algorithms: ECDSA with P-256</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="HaclHash.html">Hashing: SHA-2, SHA-3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HaclNaCl.html">NaCl API: Box and SecretBox</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Randomness.html">Randomness</a></li>
 </ul>
 </li>
@@ -175,7 +176,7 @@
 <span id="hacl-ed25519"></span><h1>Signatures: Ed25519<a class="headerlink" href="#signatures-ed25519" title="Permalink to this headline">¶</a></h1>
 <p>HACL* implements the Edwards-Curve Digital Signature Algorithm (EdDSA)
 construction for the Ed25519 elliptic curve as specified in <a class="reference external" href="https://tools.ietf.org/html/rfc8032">IETF RFC 8032</a>.
-The API for this signature algorithm is in <cite>Hacl_Ed25519.h</cite>.</p>
+The API for this signature algorithm is in <code class="docutils literal notranslate"><span class="pre">Hacl_Ed25519.h</span></code>.</p>
 <div class="section" id="key-generation">
 <h2>Key Generation<a class="headerlink" href="#key-generation" title="Permalink to this headline">¶</a></h2>
 <p>Any 32 byte array can be used as an Ed25519 private key. In
@@ -190,8 +191,8 @@ using the <code class="docutils literal notranslate"><span class="pre">secret_to
 
 </pre></div>
 </div>
-<p>The first argument is a pointer to the output public key <code class="docutils literal notranslate"><span class="pre">output</span></code> (64 bytes);
-the second argument is a pointer to the input private key <code class="docutils literal notranslate"><span class="pre">secret1</span></code> (32 bytes).</p>
+<p>The first argument is a pointer to the output public key <code class="docutils literal notranslate"><span class="pre">pub</span></code> (64 bytes);
+the second argument is a pointer to the input private key <code class="docutils literal notranslate"><span class="pre">priv</span></code> (32 bytes).</p>
 </div>
 <div class="section" id="eddsa-signing">
 <h2>EdDSA Signing<a class="headerlink" href="#eddsa-signing" title="Permalink to this headline">¶</a></h2>
@@ -202,7 +203,7 @@ the second argument is a pointer to the input private key <code class="docutils 
 </pre></div>
 </div>
 <p>The first argument is a pointer to the output signature <code class="docutils literal notranslate"><span class="pre">signature</span></code>;
-the second argument is the private key of the signer <code class="docutils literal notranslate"><span class="pre">secret1</span></code>;
+the second argument is the private key of the signer <code class="docutils literal notranslate"><span class="pre">priv</span></code>;
 the third argument is the length <code class="docutils literal notranslate"><span class="pre">len</span></code> of the message to be signed <code class="docutils literal notranslate"><span class="pre">msg</span></code>.
 The size of <code class="docutils literal notranslate"><span class="pre">signature</span></code> must be (at least) 64 bytes; the size of the private
 key is 32 bytes.</p>
@@ -215,19 +216,19 @@ key is 32 bytes.</p>
 
 </pre></div>
 </div>
-<p>The first argument is a pointer to the public key <code class="docutils literal notranslate"><span class="pre">output</span></code> (64 bytes);
+<p>The first argument is a pointer to the public key <code class="docutils literal notranslate"><span class="pre">pub</span></code> (64 bytes);
 the second argument is the length <code class="docutils literal notranslate"><span class="pre">len</span></code> of the message to be signed <code class="docutils literal notranslate"><span class="pre">msg</span></code>;
 the last argument is the input signature <code class="docutils literal notranslate"><span class="pre">signature</span></code>.
-If the signature verification succeeds the function returns the boolean <cite>true</cite>,
-otherwise it returns <cite>false</cite>.</p>
+If the signature verification succeeds the function returns the boolean <code class="docutils literal notranslate"><span class="pre">true</span></code>,
+otherwise it returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 </div>
 <div class="section" id="eddsa-sign-expanded">
 <h2>EdDSA Sign Expanded<a class="headerlink" href="#eddsa-sign-expanded" title="Permalink to this headline">¶</a></h2>
 <p>In situations where a signer needs to sign many times with the same
 signature key, a part of the signature computation can be shared
 between these invocations for efficiency. The caller first calls
-<cite>Hacl_Ed25519_expand_keys</cite> to compute an expanded signing key <cite>ks</cite>,
-and then can use <cite>ks</cite> to call <cite>Hacl_Ed25519_sign_expanded</cite> multiple
+<code class="docutils literal notranslate"><span class="pre">Hacl_Ed25519_expand_keys</span></code> to compute an expanded signing key <code class="docutils literal notranslate"><span class="pre">ks</span></code>,
+and then can use <code class="docutils literal notranslate"><span class="pre">ks</span></code> to call <code class="docutils literal notranslate"><span class="pre">Hacl_Ed25519_sign_expanded</span></code> multiple
 times with different arguments.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
 <span class="kt">void</span> <span class="nf">Hacl_Ed25519_expand_keys</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">ks</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">secret1</span><span class="p">);</span>
@@ -257,7 +258,7 @@ this code.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="HaclHash.html" class="btn btn-neutral float-right" title="Hashing: SHA-2, SHA-3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="HaclNaCl.html" class="btn btn-neutral float-right" title="NaCl API: Box and SecretBox" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="HaclECDH.html" class="btn btn-neutral float-left" title="ECDH: X25519" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
