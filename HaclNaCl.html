@@ -179,12 +179,13 @@ The functions of this API are in <code class="docutils literal notranslate"><spa
 <p>The simplest API for Box encryption and decryption is as follows:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
 <span class="kt">uint32_t</span>
-<span class="nf">Hacl_NaCl_crypto_box_easy_afternm</span><span class="p">(</span>
+<span class="nf">Hacl_NaCl_crypto_box_easy</span><span class="p">(</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">m</span><span class="p">,</span>
   <span class="kt">uint32_t</span> <span class="n">mlen</span><span class="p">,</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">n1</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k</span>
+  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">pk</span><span class="p">,</span>
+  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">sk</span>
 <span class="p">);</span>
 
 </pre></div>
@@ -197,12 +198,13 @@ Curve25519 public key <code class="docutils literal notranslate"><span class="pr
 The function returns 0 on success and -1 (i.e. <code class="docutils literal notranslate"><span class="pre">0xffffffff</span></code>)  on failure.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
 <span class="kt">uint32_t</span>
-<span class="nf">Hacl_NaCl_crypto_box_open_easy_afternm</span><span class="p">(</span>
+<span class="nf">Hacl_NaCl_crypto_box_open_easy</span><span class="p">(</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">m</span><span class="p">,</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span>
   <span class="kt">uint32_t</span> <span class="n">clen</span><span class="p">,</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">n1</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k</span>
+  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">pk</span><span class="p">,</span>
+  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">sk</span>
 <span class="p">);</span>
 
 </pre></div>
