@@ -20,11 +20,21 @@
   <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
         <script type="text/javascript" src="static/jquery.js"></script>
         <script type="text/javascript" src="static/underscore.js"></script>
         <script type="text/javascript" src="static/doctools.js"></script>
-        <script type="text/javascript" src="static/language_data.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="static/js/theme.js"></script>
 
@@ -161,8 +171,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/EverCryptNonAgile.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -172,6 +180,7 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
            <div itemprop="articleBody">
             
   <div class="section" id="non-agile-apis">
@@ -203,18 +212,18 @@ APIs.</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">dst</span></code> must be at least 16 bytes</p></li>
-<li><p>if <code class="docutils literal notranslate"><span class="pre">len</span></code>, the length of <code class="docutils literal notranslate"><span class="pre">src</span></code>, gets close to 4GB, you need to read the
-precondition in <code class="docutils literal notranslate"><span class="pre">EverCrypt.Poly1305.fsti</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code> must be at least 32 bytes</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">dst</span></code> must be at least 16 bytes</li>
+<li>if <code class="docutils literal notranslate"><span class="pre">len</span></code>, the length of <code class="docutils literal notranslate"><span class="pre">src</span></code>, gets close to 4GB, you need to read the
+precondition in <code class="docutils literal notranslate"><span class="pre">EverCrypt.Poly1305.fsti</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">key</span></code> must be at least 32 bytes</li>
 </ul>
 </div>
 <div class="section" id="ed25519">
 <h2>Ed25519<a class="headerlink" href="#ed25519" title="Permalink to this headline">¶</a></h2>
 <p>Found in <code class="docutils literal notranslate"><span class="pre">EverCrypt_Ed25519.h</span></code>.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is just a placeholder and there is no multiplexing for this API yet.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">This is just a placeholder and there is no multiplexing for this API yet.</p>
 </div>
 </div>
 </div>
@@ -223,6 +232,10 @@ precondition in <code class="docutils literal notranslate"><span class="pre">Eve
            </div>
            
           </div>
+    <a href="https://github.com/project-everest/hacl-star/">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">

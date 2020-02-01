@@ -20,11 +20,21 @@
   <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
         <script type="text/javascript" src="static/jquery.js"></script>
         <script type="text/javascript" src="static/underscore.js"></script>
         <script type="text/javascript" src="static/doctools.js"></script>
-        <script type="text/javascript" src="static/language_data.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="static/js/theme.js"></script>
 
@@ -147,8 +157,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/Overview.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -158,6 +166,7 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
            <div itemprop="articleBody">
             
   <div class="section" id="underlying-research">
@@ -172,20 +181,20 @@ strong guarantees that a program behaves as expected and is free from entire
 classes of errors.</p>
 <p>Our specifications cover a range of properties, including:</p>
 <ul class="simple">
-<li><p>Memory safety: our code never violates memory abstractions,
+<li>Memory safety: our code never violates memory abstractions,
 and, as a consequence, is free from common bugs and vulnerabilities like
 buffer overflows, null-pointer dereferences, use-after-frees, double-frees,
-etc.</p></li>
-<li><p>Type safety: our code respects the interfaces amongs its components
+etc.</li>
+<li>Type safety: our code respects the interfaces amongs its components
 including any abstraction boundaries; e.g., one component never passes
-the wrong kind of parameters to another, or accesses its private state.</p></li>
-<li><p>Functional correctness: our code’s input/output behavior is fully
+the wrong kind of parameters to another, or accesses its private state.</li>
+<li>Functional correctness: our code’s input/output behavior is fully
 characterized by simple mathematical functions derived directly
-from the official cryptographic standards (e.g., from NIST or the IETF).</p></li>
-<li><p>Secret Independence: Observations about our code’s low-level behavior
+from the official cryptographic standards (e.g., from NIST or the IETF).</li>
+<li>Secret Independence: Observations about our code’s low-level behavior
 (specifically, the time it takes to execute or the memory addresses that it
 accesses) are independent of the secrets manipulated by the library. Hence, an
-adversary monitoring these “side-channels” learns nothing about the secrets.</p></li>
+adversary monitoring these “side-channels” learns nothing about the secrets.</li>
 </ul>
 <p>All of these guarantees <em>do not</em> prevent our code from achieving good
 performance!  HACL* meets or beats the performance of most existing
@@ -253,6 +262,10 @@ responsible for compiling the Vale code to assembly.</p>
            </div>
            
           </div>
+    <a href="https://github.com/project-everest/hacl-star/">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">

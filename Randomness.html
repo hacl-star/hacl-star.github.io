@@ -20,11 +20,21 @@
   <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
         <script type="text/javascript" src="static/jquery.js"></script>
         <script type="text/javascript" src="static/underscore.js"></script>
         <script type="text/javascript" src="static/doctools.js"></script>
-        <script type="text/javascript" src="static/language_data.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="static/js/theme.js"></script>
 
@@ -36,7 +46,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="EverCrypt APIs" href="EverCryptDoc.html" />
-    <link rel="prev" title="Hashing: SHA-2, SHA-3" href="HaclHash.html" /> 
+    <link rel="prev" title="NaCl API: Box and SecretBox" href="HaclNaCl.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,10 +99,10 @@
 <li class="toctree-l1"><a class="reference internal" href="General.html">Digging into the F* source code</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="HaclDoc.html">HACL APIs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="HaclAEAD.html">AEAD: Chacha20-Poly1305</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HaclHash.html">Hashing: SHA-2, SHA-3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HaclECDH.html">ECDH: X25519</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HaclSig.html">Signatures: Ed25519</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HaclNaCl.html">NaCl API: Box and SecretBox</a></li>
-<li class="toctree-l2"><a class="reference internal" href="HaclHash.html">Hashing: SHA-2, SHA-3</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Randomness</a></li>
 </ul>
 </li>
@@ -152,8 +162,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/Randomness.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -163,6 +171,7 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
            <div itemprop="articleBody">
             
   <div class="section" id="randomness">
@@ -181,8 +190,8 @@ than owned.</p>
 <code class="docutils literal notranslate"><span class="pre">CryptGenRandom</span></code> for Microsoft Windows and using <code class="docutils literal notranslate"><span class="pre">/dev/urandom</span></code>
 for Unix platforms.</p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This file is handwritten and is part of the TCB, hence it
+<p class="first admonition-title">Warning</p>
+<p class="last">This file is handwritten and is part of the TCB, hence it
 should be minimally reviewed before being used.</p>
 </div>
 </div>
@@ -191,6 +200,10 @@ should be minimally reviewed before being used.</p>
            </div>
            
           </div>
+    <a href="https://github.com/project-everest/hacl-star/">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
@@ -198,7 +211,7 @@ should be minimally reviewed before being used.</p>
         <a href="EverCryptDoc.html" class="btn btn-neutral float-right" title="EverCrypt APIs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="HaclHash.html" class="btn btn-neutral float-left" title="Hashing: SHA-2, SHA-3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="HaclNaCl.html" class="btn btn-neutral float-left" title="NaCl API: Box and SecretBox" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

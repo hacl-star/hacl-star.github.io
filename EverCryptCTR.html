@@ -20,11 +20,21 @@
   <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
         <script type="text/javascript" src="static/jquery.js"></script>
         <script type="text/javascript" src="static/underscore.js"></script>
         <script type="text/javascript" src="static/doctools.js"></script>
-        <script type="text/javascript" src="static/language_data.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="static/js/theme.js"></script>
 
@@ -159,8 +169,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/EverCryptCTR.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -170,30 +178,31 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
            <div itemprop="articleBody">
             
   <div class="section" id="ctr-mode-encryption-evercrypt-ctr-h">
 <h1>CTR-mode encryption (<code class="docutils literal notranslate"><span class="pre">EverCrypt_CTR.h</span></code>)<a class="headerlink" href="#ctr-mode-encryption-evercrypt-ctr-h" title="Permalink to this headline">¶</a></h1>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Using encryption without a MAC is potentially <strong>dangerous</strong>. We recommend users
+<p class="first admonition-title">Warning</p>
+<p class="last">Using encryption without a MAC is potentially <strong>dangerous</strong>. We recommend users
 stick with the AEAD API.</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<p class="first admonition-title">Warning</p>
 <p><strong>This API is a work-in-progress and is not fully verified.</strong> If you need it
 for something serious, let us know and we’ll prioritize.</p>
-<ul class="simple">
-<li><p>It doesn’t multiplex across all implementations of Chacha</p></li>
-<li><p>It doesn’t offer complete encryption, only block-by-block</p></li>
-<li><p>It has no streaming API</p></li>
+<ul class="last simple">
+<li>It doesn’t multiplex across all implementations of Chacha</li>
+<li>It doesn’t offer complete encryption, only block-by-block</li>
+<li>It has no streaming API</li>
 </ul>
 </div>
 <p>This API is:</p>
 <ul class="simple">
-<li><p><strong>agile</strong></p></li>
-<li><p><strong>multiplexing</strong>: portable C (Chacha); AESNI + CLMUL (AES128, AES256)</p></li>
-<li><p><strong>stateful</strong></p></li>
+<li><strong>agile</strong></li>
+<li><strong>multiplexing</strong>: portable C (Chacha); AESNI + CLMUL (AES128, AES256)</li>
+<li><strong>stateful</strong></li>
 </ul>
 <p>Possible values for the agility argument (<code class="docutils literal notranslate"><span class="pre">Hacl_Spec.h</span></code>) :</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
@@ -257,6 +266,10 @@ mode, and internally increments the state by one.</p>
            </div>
            
           </div>
+    <a href="https://github.com/project-everest/hacl-star/">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">

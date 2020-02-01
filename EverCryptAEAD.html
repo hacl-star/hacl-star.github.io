@@ -20,11 +20,21 @@
   <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
         <script type="text/javascript" src="static/jquery.js"></script>
         <script type="text/javascript" src="static/underscore.js"></script>
         <script type="text/javascript" src="static/doctools.js"></script>
-        <script type="text/javascript" src="static/language_data.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="static/js/theme.js"></script>
 
@@ -159,8 +169,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/EverCryptAEAD.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -170,16 +178,17 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
            <div itemprop="articleBody">
             
   <div class="section" id="aead-evercrypt-aead-h">
 <h1>AEAD (<code class="docutils literal notranslate"><span class="pre">EverCrypt_AEAD.h</span></code>)<a class="headerlink" href="#aead-evercrypt-aead-h" title="Permalink to this headline">¶</a></h1>
 <p>This API is:</p>
 <ul class="simple">
-<li><p><strong>agile</strong></p></li>
-<li><p><strong>multiplexing</strong>: portable C (Chacha-Poly only); AVX (Chacha-Poly); AVX2
-(Chacha-Poly); AESNI + CLMUL (AES128-GCM, AES256-GCM)</p></li>
-<li><p><strong>stateful</strong></p></li>
+<li><strong>agile</strong></li>
+<li><strong>multiplexing</strong>: portable C (Chacha-Poly only); AVX (Chacha-Poly); AVX2
+(Chacha-Poly); AESNI + CLMUL (AES128-GCM, AES256-GCM)</li>
+<li><strong>stateful</strong></li>
 </ul>
 <p>Possible values for the agility argument (<code class="docutils literal notranslate"><span class="pre">Hacl_Spec.h</span></code>) :</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
@@ -256,8 +265,8 @@ deciphering F* code.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>There is no length parameter for the tag; looking at the source
+<p class="first admonition-title">Note</p>
+<p class="last">There is no length parameter for the tag; looking at the source
 <code class="docutils literal notranslate"><span class="pre">EverCrypt.AEAD.fsti</span></code>, one can see a precondition of the form <code class="docutils literal notranslate"><span class="pre">B.length</span> <span class="pre">tag</span>
 <span class="pre">=</span> <span class="pre">tag_length</span> <span class="pre">a</span></code>, i.e. the length of the <code class="docutils literal notranslate"><span class="pre">tag</span></code> array must be of a suitable
 length for the algorithm <code class="docutils literal notranslate"><span class="pre">a</span></code>. See <code class="docutils literal notranslate"><span class="pre">Spec.Agile.AEAD.fsti</span></code> for the
@@ -287,6 +296,10 @@ to perform a run-time check!</strong></p>
            </div>
            
           </div>
+    <a href="https://github.com/project-everest/hacl-star/">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">

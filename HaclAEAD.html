@@ -20,11 +20,21 @@
   <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
         <script type="text/javascript" src="static/jquery.js"></script>
         <script type="text/javascript" src="static/underscore.js"></script>
         <script type="text/javascript" src="static/doctools.js"></script>
-        <script type="text/javascript" src="static/language_data.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="static/js/theme.js"></script>
 
@@ -157,8 +167,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/HaclAEAD.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -168,6 +176,7 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
            <div itemprop="articleBody">
             
   <div class="section" id="aead-chacha20-poly1305">
@@ -178,15 +187,15 @@ specified in <a class="reference external" href="https://tools.ietf.org/html/rfc
 The library includes three implementations of this construction,
 all with the same API, but meant for use on different platforms:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Hacl_Chacha20Poly1305_32.h</span></code> contains a portable C implementation
-that can be compiled and run on any 32-bit platform</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Hacl_Chacha20Poly1305_128.h</span></code> contains a 128-bit vectorized C implementation
+<li><code class="docutils literal notranslate"><span class="pre">Hacl_Chacha20Poly1305_32.h</span></code> contains a portable C implementation
+that can be compiled and run on any 32-bit platform</li>
+<li><code class="docutils literal notranslate"><span class="pre">Hacl_Chacha20Poly1305_128.h</span></code> contains a 128-bit vectorized C implementation
 that can be compiled and run on any platform that supports the
 Intel AVX instruction set. On a development branch, we also support
-the ARM Neon instruction set.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Hacl_Chacha20Poly1305_256.h</span></code> contains a 256-bit vectorized C implementation
+the ARM Neon instruction set.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Hacl_Chacha20Poly1305_256.h</span></code> contains a 256-bit vectorized C implementation
 that can be compiled and run on any platform that supports the
-Intel AVX2 instruction set.</p></li>
+Intel AVX2 instruction set.</li>
 </ul>
 <p>All three versions provide a similar API for AEAD encryption and decryption:</p>
 <div class="section" id="aead-encryption">
@@ -252,6 +261,10 @@ but we do not recommend their use outside the AEAD API.</p>
            </div>
            
           </div>
+    <a href="https://github.com/project-everest/hacl-star/">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
