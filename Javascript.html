@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Verified Applications &mdash; HACL* and EverCrypt Manual  documentation</title>
+  <title>Using the Javascript bindings of HACL* &mdash; HACL* and EverCrypt Manual  documentation</title>
   
 
   
@@ -45,8 +45,7 @@
   <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Using the Javascript bindings of HACL*" href="Javascript.html" />
-    <link rel="prev" title="Which API to use" href="API.html" /> 
+    <link rel="prev" title="Verified Applications" href="Applications.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,13 +99,11 @@
 <li class="toctree-l1"><a class="reference internal" href="HaclDoc.html">HACL APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EverCryptDoc.html">EverCrypt APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="API.html">Which API to use</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Verified Applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#everest-mitls">Everest/miTLS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#libsignal">LibSignal*</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#merkletree">MerkleTree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Applications.html">Verified Applications</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using the Javascript bindings of HACL*</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Javascript.html">Using the Javascript bindings of HACL*</a></li>
 </ul>
 
             
@@ -152,7 +149,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Verified Applications</li>
+      <li>Using the Javascript bindings of HACL*</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,23 +167,23 @@
 
            <div itemprop="articleBody">
             
-  <div class="section" id="verified-applications">
-<h1>Verified Applications<a class="headerlink" href="#verified-applications" title="Permalink to this headline">¶</a></h1>
-<p>Several verification projects are based on HACL* and EverCrypt.</p>
-<div class="section" id="everest-mitls">
-<h2>Everest/miTLS<a class="headerlink" href="#everest-mitls" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference external" href="https://mitls.org">miTLS</a> verified TLS implementation being developed as part of Project Everest relies on EverCrypt for all its cryptography.
-The current development of miTLS can be found <a class="reference external" href="https://github.com/project-everest/mitls-fstar">here</a>.</p>
+  <div class="section" id="using-the-javascript-bindings-of-hacl">
+<h1>Using the Javascript bindings of HACL*<a class="headerlink" href="#using-the-javascript-bindings-of-hacl" title="Permalink to this headline">¶</a></h1>
+<p>To use the Javascript bindings of HACL*, please obtain the corresponding
+<a class="reference external" href="https://www.npmjs.com/package/hacl-wasm">Node.js package</a>. These bindings
+actually call WebAssembly functions that are compiled directly from the F*
+source code using the KreMLin compiler.</p>
+<p>The <cite>jsdoc</cite> documentation of the package can be found <a class="reference external" href="https://hacl-star.github.io/javascript_doc/">here</a>.
+Please note that the API is asynchronous (it uses promises).</p>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Here is a small example of how to use the library (with Node.js) :</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">hacl</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;hacl-wasm&quot;</span><span class="p">);</span>
+<span class="nx">hacl</span><span class="p">.</span><span class="nx">Curve25519</span><span class="p">.</span><span class="nx">ecdh</span><span class="p">(</span><span class="k">new</span> <span class="nx">Uint8Array</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span> <span class="k">new</span> <span class="nx">Uint8Array</span><span class="p">(</span><span class="mi">32</span><span class="p">)).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Here result contains an Uint8Array of size 32 with the DH exchange result</span>
+<span class="p">});</span>
+</pre></div>
 </div>
-<div class="section" id="libsignal">
-<h2>LibSignal*<a class="headerlink" href="#libsignal" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference external" href="https://signalstar.gforge.inria.fr/">Signal*</a> verified implementation of the Signal protocol is written in F* and compiles
-to both C and WebAssembly. Both versions rely on HACL* for their crypto.</p>
-</div>
-<div class="section" id="merkletree">
-<h2>MerkleTree<a class="headerlink" href="#merkletree" title="Permalink to this headline">¶</a></h2>
-<p>The HACL* repository includes a verified Merkle Tree library in <cite>/secure_api/merkle_tree</cite> which uses the EverCrypt Hash API to
-build and modify Merkle Trees.</p>
 </div>
 </div>
 
@@ -202,10 +199,8 @@ build and modify Merkle Trees.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Javascript.html" class="btn btn-neutral float-right" title="Using the Javascript bindings of HACL*" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="API.html" class="btn btn-neutral float-left" title="Which API to use" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Applications.html" class="btn btn-neutral float-left" title="Verified Applications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
