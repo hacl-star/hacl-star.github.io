@@ -212,6 +212,14 @@ Makefile has been tested in a Cygwin environment equipped with the MinGW
 cross-compilers. The <cite>dist/compact-msvc</cite> distribution works with the Microsoft
 compilers, but we provide no build support (i.e. no Visual Studio project, no
 NMake-compatible makefile).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">gcc-compatible</span></code> distribution also features OCaml bindings to our code.
+These require a valid OCaml setup, including packages ctypes, ctypes-foreign
+and bigstring, usually obtained via OPAM. You can easily disable building
+these bindings by removing the <code class="docutils literal notranslate"><span class="pre">lib_gen</span></code> directory in
+<code class="docutils literal notranslate"><span class="pre">dist/gcc-compatible</span></code>.</p>
+</div>
 </div>
 <div class="section" id="integrating-the-code">
 <h2>Integrating the code<a class="headerlink" href="#integrating-the-code" title="Permalink to this headline">¶</a></h2>
