@@ -174,7 +174,7 @@ agility overhead. Consider, for instance, Chacha-Poly encryption from
 <span class="kt">void</span>
 <span class="nf">Hacl_Chacha20Poly1305_256_aead_encrypt</span><span class="p">(</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">n1</span><span class="p">,</span>
+  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">n</span><span class="p">,</span>
   <span class="kt">uint32_t</span> <span class="n">aadlen</span><span class="p">,</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">aad</span><span class="p">,</span>
   <span class="kt">uint32_t</span> <span class="n">mlen</span><span class="p">,</span>
@@ -206,7 +206,7 @@ implementation based on he results of target CPU detection.</p>
 the desired AEAD algorithm as a parameter (agility):</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
 <span class="n">EverCrypt_Error_error_code</span>
-<span class="nf">EverCrypt_AEAD_create_in</span><span class="p">(</span><span class="n">Spec_Agile_AEAD_alg</span> <span class="n">a</span><span class="p">,</span> <span class="n">EverCrypt_AEAD_state_s</span> <span class="o">**</span><span class="n">dst</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k1</span><span class="p">);</span>
+<span class="nf">EverCrypt_AEAD_create_in</span><span class="p">(</span><span class="n">Spec_Agile_AEAD_alg</span> <span class="n">a</span><span class="p">,</span> <span class="n">EverCrypt_AEAD_state_s</span> <span class="o">**</span><span class="n">dst</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k</span><span class="p">);</span>
 
 </pre></div>
 </div>

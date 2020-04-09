@@ -193,7 +193,7 @@ The functions of this API are in <code class="docutils literal notranslate"><spa
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">m</span><span class="p">,</span>
   <span class="kt">uint32_t</span> <span class="n">mlen</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">n1</span><span class="p">,</span>
+  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">n</span><span class="p">,</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k</span>
 <span class="p">);</span>
 
@@ -211,7 +211,7 @@ The function returns 0 on success and -1 (i.e. <code class="docutils literal not
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">m</span><span class="p">,</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span>
   <span class="kt">uint32_t</span> <span class="n">clen</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">n1</span><span class="p">,</span>
+  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">n</span><span class="p">,</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k</span>
 <span class="p">);</span>
 
@@ -238,7 +238,7 @@ multiple times.</li>
 <p>The NaCl API also provides a symmetric encryption primive with the following “easy” API:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
 <span class="kt">uint32_t</span>
-<span class="nf">Hacl_NaCl_crypto_secretbox_easy</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">m</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">mlen</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">n1</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k</span><span class="p">);</span>
+<span class="nf">Hacl_NaCl_crypto_secretbox_easy</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">m</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">mlen</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k</span><span class="p">);</span>
 
 </pre></div>
 </div>
@@ -248,7 +248,7 @@ multiple times.</li>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">m</span><span class="p">,</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span>
   <span class="kt">uint32_t</span> <span class="n">clen</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">n1</span><span class="p">,</span>
+  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">n</span><span class="p">,</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k</span>
 <span class="p">);</span>
 

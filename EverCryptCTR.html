@@ -223,7 +223,7 @@ stores the expanded key along with the current value of the counter.</p>
 <span class="nf">EverCrypt_CTR_create_in</span><span class="p">(</span>
   <span class="n">Spec_Agile_Cipher_cipher_alg</span> <span class="n">a</span><span class="p">,</span>
   <span class="n">EverCrypt_CTR_state_s</span> <span class="o">**</span><span class="n">dst</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k1</span><span class="p">,</span>
+  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k</span><span class="p">,</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">iv</span><span class="p">,</span>
   <span class="kt">uint32_t</span> <span class="n">iv_len</span><span class="p">,</span>
   <span class="kt">uint32_t</span> <span class="n">c</span>
@@ -241,7 +241,7 @@ function. (This function really should be called <code class="docutils literal n
 <span class="kt">void</span>
 <span class="nf">EverCrypt_CTR_init</span><span class="p">(</span>
   <span class="n">EverCrypt_CTR_state_s</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k1</span><span class="p">,</span>
+  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k</span><span class="p">,</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">iv</span><span class="p">,</span>
   <span class="kt">uint32_t</span> <span class="n">iv_len</span><span class="p">,</span>
   <span class="kt">uint32_t</span> <span class="n">c</span>
