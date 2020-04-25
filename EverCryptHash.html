@@ -243,7 +243,7 @@ and as such does not return an error code. This is possible because i) we always
 have a fallback portable C implementation available for all algorithms and ii)
 we do not yet model allocation failures.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="n">EverCrypt_Hash_Incremental_state_s</span>
+<span class="n">Hacl_Streaming_Functor_state_s___EverCrypt_Hash_state_s____</span>
 <span class="o">*</span><span class="nf">EverCrypt_Hash_Incremental_create_in</span><span class="p">(</span><span class="n">Spec_Hash_Definitions_hash_alg</span> <span class="n">a</span><span class="p">);</span>
 
 </pre></div>
@@ -252,7 +252,7 @@ we do not yet model allocation failures.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
 <span class="kt">void</span>
 <span class="nf">EverCrypt_Hash_Incremental_update</span><span class="p">(</span>
-  <span class="n">EverCrypt_Hash_Incremental_state_s</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span>
+  <span class="n">Hacl_Streaming_Functor_state_s___EverCrypt_Hash_state_s____</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span>
   <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span>
   <span class="kt">uint32_t</span> <span class="n">len</span>
 <span class="p">);</span>
@@ -262,14 +262,19 @@ we do not yet model allocation failures.</p>
 <p>A hash can be extracted at any time by the client without invalidating the
 state:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span> <span class="nf">EverCrypt_Hash_Incremental_finish</span><span class="p">(</span><span class="n">EverCrypt_Hash_Incremental_state_s</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">dst</span><span class="p">);</span>
+<span class="kt">void</span>
+<span class="nf">EverCrypt_Hash_Incremental_finish_md5</span><span class="p">(</span>
+  <span class="n">Hacl_Streaming_Functor_state_s___EverCrypt_Hash_state_s____</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span>
+  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">dst</span>
+<span class="p">);</span>
 
 </pre></div>
 </div>
 <p>Once done, clients should use <code class="docutils literal notranslate"><span class="pre">free</span></code> which frees all internal buffers and
 underlying block-based state:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span> <span class="nf">EverCrypt_Hash_Incremental_free</span><span class="p">(</span><span class="n">EverCrypt_Hash_Incremental_state_s</span> <span class="o">*</span><span class="n">s</span><span class="p">);</span>
+<span class="kt">void</span>
+<span class="nf">EverCrypt_Hash_Incremental_free</span><span class="p">(</span><span class="n">Hacl_Streaming_Functor_state_s___EverCrypt_Hash_state_s____</span> <span class="o">*</span><span class="n">s</span><span class="p">);</span>
 
 </pre></div>
 </div>
