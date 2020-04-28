@@ -99,7 +99,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#picking-a-distribution">Picking a distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#compiling-a-full-distribution">Compiling a full distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#integrating-the-code">Integrating the code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bindings-for-other-languages">Bindings for Other Languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bindings-for-other-languages">Bindings for Other Languages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ocaml">OCaml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#javascript">JavaScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rust">Rust</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="General.html">Digging into the F* source code</a></li>
@@ -107,7 +112,6 @@
 <li class="toctree-l1"><a class="reference internal" href="EverCryptDoc.html">EverCrypt APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="API.html">Which API to use</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Applications.html">Verified Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Javascript.html">Using the Javascript bindings of HACL*</a></li>
 </ul>
 
             
@@ -255,13 +259,38 @@ verified (slow) implementation extracted from FStar.UInt128</li>
 verification-oriented projects in F* or as part of larger C
 developments.  In addition to these use cases, the library developers
 and other HACL* users have also developed bindings for other programming languages:</p>
-<ul class="simple">
-<li>OCaml: In a development branch, we have an OCaml wrapper for the full EverCrypt API</li>
-<li>Javascript/WebAssembly: The HACL* library is compiled to WebAssembly using the KreMLin compiler,
-and we also provide an idiomatic Javascript wrapper as a <a class="reference external" href="https://www.npmjs.com/package/hacl-wasm">Node.js package</a>.
-See also <a class="reference internal" href="Javascript.html"><span class="doc">Using the Javascript bindings of HACL*</span></a>.</li>
-</ul>
-<p>Various users have also published Rust crates for HACL*, but these have not been vetted by the HACL maintainers.</p>
+<div class="section" id="ocaml">
+<h3>OCaml<a class="headerlink" href="#ocaml" title="Permalink to this headline">¶</a></h3>
+<p>The KReMLin compiler auto-generates <code class="docutils literal notranslate"><span class="pre">ocaml-ctypes</span></code> bindings for HACL*. On top
+of these “raw” bindings, we add a high-level wrapper that uses functors, shares
+type signatures, performs run-time checks and offers a much more idiomatic API.</p>
+<p>The former can be installed by running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install-hacl-star-raw</span></code> in
+<code class="docutils literal notranslate"><span class="pre">dist/gcc-compatible</span></code>. The latter can be installed by running <code class="docutils literal notranslate"><span class="pre">dune</span> <span class="pre">build</span> <span class="pre">&amp;&amp;</span>
+<span class="pre">dune</span> <span class="pre">install</span></code> in <code class="docutils literal notranslate"><span class="pre">bindings/ocaml</span></code>.</p>
+<p>We expect these to be available in OPAM soon.</p>
+</div>
+<div class="section" id="javascript">
+<h3>JavaScript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h3>
+<p>HACL* is compiled to WebAssembly via the WASM backend of KreMLin (see the
+Oakland’19 paper for details). We offer an idiomatic JavaScript API on top of
+HACL-WASM so that clients do not have to be aware of the KreMLin memory layout,
+calling convention, etc. This latter API is available as a
+<a class="reference external" href="https://www.npmjs.com/package/hacl-wasm">Node.js package</a>.</p>
+<p>The <cite>jsdoc</cite> documentation of the package can be found <a class="reference external" href="https://hacl-star.github.io/javascript_doc/">online</a>.  Please note that the API is
+asynchronous (it uses promises).</p>
+<p>Here is a small example of how to use the library (with Node.js) :</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">hacl</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;hacl-wasm&quot;</span><span class="p">);</span>
+<span class="nx">hacl</span><span class="p">.</span><span class="nx">Curve25519</span><span class="p">.</span><span class="nx">ecdh</span><span class="p">(</span><span class="k">new</span> <span class="nx">Uint8Array</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span> <span class="k">new</span> <span class="nx">Uint8Array</span><span class="p">(</span><span class="mi">32</span><span class="p">)).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Here result contains an Uint8Array of size 32 with the DH exchange result</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rust">
+<h3>Rust<a class="headerlink" href="#rust" title="Permalink to this headline">¶</a></h3>
+<p>Various users have also published Rust crates for HACL*, but these have not been
+vetted by the HACL maintainers.</p>
+</div>
 </div>
 </div>
 
