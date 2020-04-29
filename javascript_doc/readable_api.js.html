@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: readable_api.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: readable_api.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var HaclWasm = require('../api.js');
+/**
+ * Hacl bindings for Javascript using WebAssembly.
+ * @module Hacl
+ */
+
+/**
+ * @namespace Curve25519_51
+ */
+var  Curve25519_51 = {
+
+
+/**
+ * @param {buffer} scalar - size 32
+ * @param {buffer} input - size 32
+ * @return {bool}
+ * @return {buffer} result - size 32
+ */
+ecdh: function(scalar,input,) { ecdh: HaclWasm.Curve25519_51.ecdh.apply(null, arguments) },
+
+
+/**
+ * @param {buffer} scalar - size 32
+ * @return {buffer} result - size 32
+ */
+secret_to_public: function(scalar,) { secret_to_public: HaclWasm.Curve25519_51.secret_to_public.apply(null, arguments) },
+}
+module.exports.Curve25519_51 = Curve25519_51
+
+
+/**
+ * @namespace Chacha20Poly1305
+ */
+var  Chacha20Poly1305 = {
+
+
+/**
+ * @param {buffer} key - size 32
+ * @param {buffer} nonce - size 12
+ * @param {buffer} aad - size alen
+ * @param {buffer} plaintext - size len
+ * @return {buffer} ciphertext - size len
+ * @return {buffer} mac - size 16
+ */
+aead_encrypt: function(key,nonce,aad,plaintext,) { aead_encrypt: HaclWasm.Chacha20Poly1305.aead_encrypt.apply(null, arguments) },
+
+
+/**
+ * @param {buffer} key - size 32
+ * @param {buffer} nonce - size 12
+ * @param {buffer} aad - size alen
+ * @param {buffer} ciphertext - size len
+ * @param {buffer} mac - size 16
+ * @return {bool}
+ * @return {buffer} plaintext - size len
+ */
+aead_decrypt: function(key,nonce,aad,ciphertext,mac,) { aead_decrypt: HaclWasm.Chacha20Poly1305.aead_decrypt.apply(null, arguments) },
+}
+module.exports.Chacha20Poly1305 = Chacha20Poly1305
+
+
+/**
+ * @namespace Ed25519
+ */
+var  Ed25519 = {
+
+
+/**
+ * @param {buffer} priv - size 32
+ * @return {buffer} pub - size 32
+ */
+secret_to_public: function(priv,) { secret_to_public: HaclWasm.Ed25519.secret_to_public.apply(null, arguments) },
+
+
+/**
+ * @param {buffer} priv - size 32
+ * @param {buffer} message - size len
+ * @return {buffer} signature - size 64
+ */
+sign: function(priv,message,) { sign: HaclWasm.Ed25519.sign.apply(null, arguments) },
+
+
+/**
+ * @param {buffer} pub - size 32
+ * @param {buffer} message - size len
+ * @param {buffer} signature - size 64
+ * @return {bool}
+ */
+verify: function(pub,message,signature,) { verify: HaclWasm.Ed25519.verify.apply(null, arguments) },
+}
+module.exports.Ed25519 = Ed25519
+
+
+/**
+ * @namespace SHA2
+ */
+var  SHA2 = {
+
+
+/**
+ * @param {buffer} input - size input_len
+ * @return {buffer} hash - size 64
+ */
+hash_512: function(input,) { hash_512: HaclWasm.SHA2.hash_512.apply(null, arguments) },
+
+
+/**
+ * @param {buffer} input - size input_len
+ * @return {buffer} hash - size 48
+ */
+hash_384: function(input,) { hash_384: HaclWasm.SHA2.hash_384.apply(null, arguments) },
+
+
+/**
+ * @param {buffer} input - size input_len
+ * @return {buffer} hash - size 32
+ */
+hash_256: function(input,) { hash_256: HaclWasm.SHA2.hash_256.apply(null, arguments) },
+}
+module.exports.SHA2 = SHA2
+
+
+/**
+ * @namespace Blake2
+ */
+var  Blake2 = {
+
+
+/**
+ * @param {int} output_len
+ * @param {buffer} data - size data_len
+ * @param {buffer} key - size key_len
+ * @return {buffer} output - size output_len
+ */
+blake2b: function(output_len,data,key,) { blake2b: HaclWasm.Blake2.blake2b.apply(null, arguments) },
+
+
+/**
+ * @param {int} output_len
+ * @param {buffer} data - size data_len
+ * @param {buffer} key - size key_len
+ * @return {buffer} output - size output_len
+ */
+blake2s: function(output_len,data,key,) { blake2s: HaclWasm.Blake2.blake2s.apply(null, arguments) },
+}
+module.exports.Blake2 = Blake2
+
+
+/**
+ * @namespace SHA3
+ */
+var  SHA3 = {
+
+
+/**
+ * @param {buffer} input - size input_len
+ * @return {buffer} hash - size 64
+ */
+hash_512: function(input,) { hash_512: HaclWasm.SHA3.hash_512.apply(null, arguments) },
+
+
+/**
+ * @param {buffer} input - size input_len
+ * @return {buffer} hash - size 48
+ */
+hash_384: function(input,) { hash_384: HaclWasm.SHA3.hash_384.apply(null, arguments) },
+
+
+/**
+ * @param {buffer} input - size input_len
+ * @return {buffer} hash - size 32
+ */
+hash_256: function(input,) { hash_256: HaclWasm.SHA3.hash_256.apply(null, arguments) },
+
+
+/**
+ * @param {buffer} input - size input_len
+ * @return {buffer} hash - size 28
+ */
+hash_224: function(input,) { hash_224: HaclWasm.SHA3.hash_224.apply(null, arguments) },
+}
+module.exports.SHA3 = SHA3
+
+
+/**
+ * @namespace HMAC
+ */
+var  HMAC = {
+
+
+/**
+ * @param {buffer} key - size key_len
+ * @param {buffer} data - size data_len
+ * @return {buffer} tag - size 32
+ */
+sha256: function(key,data,) { sha256: HaclWasm.HMAC.sha256.apply(null, arguments) },
+}
+module.exports.HMAC = HMAC
+
+
+/**
+ * @namespace HKDF
+ */
+var  HKDF = {
+
+
+/**
+ * @param {buffer} salt - size salt_len
+ * @param {buffer} ikm - size ikm_len
+ * @return {buffer} prk - size 32
+ */
+extract_sha2_256: function(salt,ikm,) { extract_sha2_256: HaclWasm.HKDF.extract_sha2_256.apply(null, arguments) },
+
+
+/**
+ * @param {buffer} prk - size prk_len
+ * @param {buffer} info - size infolen
+ * @param {int} len
+ * @return {buffer} okm - size len
+ */
+expand_sha2_256: function(prk,info,len,) { expand_sha2_256: HaclWasm.HKDF.expand_sha2_256.apply(null, arguments) },
+}
+module.exports.HKDF = HKDF
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Hacl.html">Hacl</a></li></ul><h3>Namespaces</h3><ul><li><a href="module-Hacl-Blake2.html">Blake2</a></li><li><a href="module-Hacl-Chacha20Poly1305.html">Chacha20Poly1305</a></li><li><a href="module-Hacl-Curve25519_51.html">Curve25519_51</a></li><li><a href="module-Hacl-Ed25519.html">Ed25519</a></li><li><a href="module-Hacl-HKDF.html">HKDF</a></li><li><a href="module-Hacl-HMAC.html">HMAC</a></li><li><a href="module-Hacl-SHA2.html">SHA2</a></li><li><a href="module-Hacl-SHA3.html">SHA3</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Apr 29 2020 16:21:36 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
