@@ -272,10 +272,14 @@ and other HACL* users have also developed bindings for other programming languag
 <p>The KReMLin compiler auto-generates <code class="docutils literal notranslate"><span class="pre">ocaml-ctypes</span></code> bindings for HACL*. On top
 of these “raw” bindings, we add a high-level wrapper that uses functors, shares
 type signatures, performs run-time checks and offers a much more idiomatic API.</p>
-<p>The former can be installed by running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install-hacl-star-raw</span></code> in
-<code class="docutils literal notranslate"><span class="pre">dist/gcc-compatible</span></code>. The latter can be installed by running <code class="docutils literal notranslate"><span class="pre">dune</span> <span class="pre">build</span> <span class="pre">&amp;&amp;</span>
-<span class="pre">dune</span> <span class="pre">install</span></code> in <code class="docutils literal notranslate"><span class="pre">bindings/ocaml</span></code>.</p>
-<p>We expect these to be available in OPAM soon.</p>
+<p>They are both available as opam packages and can be installed using
+<code class="docutils literal notranslate"><span class="pre">opam</span> <span class="pre">install</span> <span class="pre">hacl-star</span></code> or, to get the low-level bindings only,
+<code class="docutils literal notranslate"><span class="pre">opam</span> <span class="pre">install</span> <span class="pre">hacl-star-raw</span></code>.</p>
+<p>From source, the low-level bindings can be installed by running
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install-hacl-star-raw</span></code> in <code class="docutils literal notranslate"><span class="pre">dist/gcc-compatible</span></code>. Then, the high-level
+wrapper can be installed by running <code class="docutils literal notranslate"><span class="pre">dune</span> <span class="pre">build</span> <span class="pre">&amp;&amp;</span> <span class="pre">dune</span> <span class="pre">install</span></code> in
+<code class="docutils literal notranslate"><span class="pre">bindings/ocaml</span></code>.</p>
+<p>Documentation for the high-level API is available <a class="reference external" href="https://hacl-star.github.io/ocaml_doc/">here</a>.</p>
 </div>
 <div class="section" id="javascript">
 <h3>JavaScript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h3>
