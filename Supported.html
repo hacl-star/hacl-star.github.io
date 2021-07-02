@@ -206,7 +206,7 @@ documentation for each individual API for the full details.</p>
 <td>✔︎</td>
 </tr>
 <tr class="row-even"><td>Chacha20-Poly1305</td>
-<td>✔︎ (+ AVX,AVX2)</td>
+<td>✔︎ (+ 128-bit, 256-bit)</td>
 <td>&#160;</td>
 <td>✔︎</td>
 </tr>
@@ -271,7 +271,7 @@ documentation for each individual API for the full details.</p>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>Blake2</td>
-<td>✔︎ (+ AVX,AVX2)</td>
+<td>✔︎ (+ 128-bit, 256-bit)</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
@@ -291,7 +291,7 @@ documentation for each individual API for the full details.</p>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>Chacha20</td>
-<td>✔︎ (+ AVX,AVX2)</td>
+<td>✔︎ (+ 128-bit, 256-bit)</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
@@ -311,7 +311,7 @@ documentation for each individual API for the full details.</p>
 <td>✔︎</td>
 </tr>
 <tr class="row-odd"><td>Poly1305</td>
-<td>✔︎ (+ AVX,AVX2)</td>
+<td>✔︎ (+ 128-bit, 256-bit)</td>
 <td>✔︎ (X64)</td>
 <td>&#160;</td>
 </tr>
@@ -319,8 +319,10 @@ documentation for each individual API for the full details.</p>
 </table>
 <p>Points of interest:</p>
 <ul class="simple">
-<li>Some C implementations also have verified vectorized versions optimized for
-Intel AVX and AVX2 using compiler intrinsics (there is no inline assembly)</li>
+<li>Some C implementations also have verified vectorized versions using compiler
+intrinsics (there is no inline assembly).
+The 128-bit implementations are supported on Intel AVX, ARM Neon, and recent
+Power8 and IBM Z platforms. The 256-bit implementations are supported on Intel AVX2.</li>
 <li>MD5 and SHA1 are provided for legacy purposes and backwards-compatibility
 (e.g. TLS applications); no particular effort has been made to make them
 efficient</li>
