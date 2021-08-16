@@ -195,14 +195,14 @@ The functions of this API are in <code class="docutils literal notranslate"><spa
 <h2>Public-Key Encryption: Box<a class="headerlink" href="#public-key-encryption-box" title="Permalink to this headline">¶</a></h2>
 <p>The simplest API for Box encryption and decryption is as follows:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">uint32_t</span>
-<span class="nf">Hacl_NaCl_crypto_box_easy_afternm</span><span class="p">(</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">m</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">mlen</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">n</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k</span>
-<span class="p">);</span>
+<span class="kt">uint32_t</span><span class="w"></span>
+<span class="nf">Hacl_NaCl_crypto_box_easy_afternm</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">c</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">m</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">mlen</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">n</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">k</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
@@ -213,14 +213,14 @@ the Curve25519 private key <code class="docutils literal notranslate"><span clas
 Curve25519 public key <code class="docutils literal notranslate"><span class="pre">pk</span></code> of the recipient (32 bytes).
 The function returns 0 on success and -1 (i.e. <code class="docutils literal notranslate"><span class="pre">0xffffffff</span></code>)  on failure.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">uint32_t</span>
-<span class="nf">Hacl_NaCl_crypto_box_open_easy_afternm</span><span class="p">(</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">m</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">clen</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">n</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k</span>
-<span class="p">);</span>
+<span class="kt">uint32_t</span><span class="w"></span>
+<span class="nf">Hacl_NaCl_crypto_box_open_easy_afternm</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">m</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">c</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">clen</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">n</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">k</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
@@ -244,20 +244,20 @@ multiple times.</li>
 <h2>Symmetric Encryption: SecretBox<a class="headerlink" href="#symmetric-encryption-secretbox" title="Permalink to this headline">¶</a></h2>
 <p>The NaCl API also provides a symmetric encryption primive with the following “easy” API:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">uint32_t</span>
-<span class="nf">Hacl_NaCl_crypto_secretbox_easy</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">m</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">mlen</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k</span><span class="p">);</span>
+<span class="kt">uint32_t</span><span class="w"></span>
+<span class="nf">Hacl_NaCl_crypto_secretbox_easy</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">mlen</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">k</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">uint32_t</span>
-<span class="nf">Hacl_NaCl_crypto_secretbox_open_easy</span><span class="p">(</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">m</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">clen</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">n</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k</span>
-<span class="p">);</span>
+<span class="kt">uint32_t</span><span class="w"></span>
+<span class="nf">Hacl_NaCl_crypto_secretbox_open_easy</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">m</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">c</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">clen</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">n</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">k</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>

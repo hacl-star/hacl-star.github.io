@@ -220,15 +220,15 @@ in <code class="docutils literal notranslate"><span class="pre">EverCrypt.HMAC.f
 <h2>Agile API<a class="headerlink" href="#agile-api" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">expand</span></code> and <code class="docutils literal notranslate"><span class="pre">extract</span></code> functions are agile and multiplexing:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span>
-<span class="nf">EverCrypt_HKDF_extract</span><span class="p">(</span>
-  <span class="n">Spec_Hash_Definitions_hash_alg</span> <span class="n">a</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">prk</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">salt</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">saltlen</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">ikm</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">ikmlen</span>
-<span class="p">);</span>
+<span class="kt">void</span><span class="w"></span>
+<span class="nf">EverCrypt_HKDF_extract</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">Spec_Hash_Definitions_hash_alg</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">prk</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">salt</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">saltlen</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">ikm</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ikmlen</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
@@ -241,15 +241,15 @@ in <code class="docutils literal notranslate"><span class="pre">EverCrypt.HMAC.f
 <code class="docutils literal notranslate"><span class="pre">extract_st</span></code>, in <code class="docutils literal notranslate"><span class="pre">EverCrypt.HKDF.fsti</span></code>.</li>
 </ul>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span>
-<span class="nf">EverCrypt_HKDF_expand_sha1</span><span class="p">(</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">okm</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">prk</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">prklen</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">info</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">infolen</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">len</span>
-<span class="p">);</span>
+<span class="kt">void</span><span class="w"></span>
+<span class="nf">EverCrypt_HKDF_expand_sha1</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">okm</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">prk</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">prklen</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">info</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">infolen</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">len</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
@@ -267,27 +267,27 @@ versions below.  As such, the cost of agility is one test.</p>
 <h2>Non-agile API<a class="headerlink" href="#non-agile-api" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">expand_*</span></code> and <code class="docutils literal notranslate"><span class="pre">extract_*</span></code> functions are <strong>non-agile</strong> and multiplexing:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span>
-<span class="nf">EverCrypt_HKDF_expand_sha2_512</span><span class="p">(</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">okm</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">prk</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">prklen</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">info</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">infolen</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">len</span>
-<span class="p">);</span>
+<span class="kt">void</span><span class="w"></span>
+<span class="nf">EverCrypt_HKDF_expand_sha2_512</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">okm</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">prk</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">prklen</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">info</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">infolen</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">len</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span>
-<span class="nf">EverCrypt_HKDF_extract_sha2_512</span><span class="p">(</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">prk</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">salt</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">saltlen</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">ikm</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">ikmlen</span>
-<span class="p">);</span>
+<span class="kt">void</span><span class="w"></span>
+<span class="nf">EverCrypt_HKDF_extract_sha2_512</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">prk</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">salt</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">saltlen</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">ikm</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ikmlen</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>

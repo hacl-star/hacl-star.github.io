@@ -204,7 +204,7 @@ such as HKDF.</p>
 <p>Given a private key, the corresponding public key can be computed
 using the <code class="docutils literal notranslate"><span class="pre">secret_to_public</span></code> function:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span> <span class="nf">Hacl_Ed25519_secret_to_public</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">pub</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">priv</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Hacl_Ed25519_secret_to_public</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">pub</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">priv</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
@@ -215,7 +215,7 @@ the second argument is a pointer to the input private key <code class="docutils 
 <h2>EdDSA Signing<a class="headerlink" href="#eddsa-signing" title="Permalink to this headline">¶</a></h2>
 <p>The signature  operation is implemented by the following function:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span> <span class="nf">Hacl_Ed25519_sign</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">signature</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">priv</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">msg</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Hacl_Ed25519_sign</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">signature</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">priv</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
@@ -229,7 +229,7 @@ key is 32 bytes.</p>
 <h2>EdDSA Verify<a class="headerlink" href="#eddsa-verify" title="Permalink to this headline">¶</a></h2>
 <p>To verify an Ed25519 signature, one may call the following function:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">bool</span> <span class="nf">Hacl_Ed25519_verify</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">pub</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">msg</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">signature</span><span class="p">);</span>
+<span class="kt">bool</span><span class="w"> </span><span class="nf">Hacl_Ed25519_verify</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">pub</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">signature</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
@@ -248,12 +248,12 @@ between these invocations for efficiency. The caller first calls
 and then can use <code class="docutils literal notranslate"><span class="pre">ks</span></code> to call <code class="docutils literal notranslate"><span class="pre">Hacl_Ed25519_sign_expanded</span></code> multiple
 times with different arguments.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span> <span class="nf">Hacl_Ed25519_expand_keys</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">ks</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">priv</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Hacl_Ed25519_expand_keys</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">ks</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">priv</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span> <span class="nf">Hacl_Ed25519_sign_expanded</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">signature</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">ks</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">msg</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Hacl_Ed25519_sign_expanded</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">signature</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">ks</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>

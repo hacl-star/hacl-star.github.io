@@ -220,15 +220,15 @@ in <code class="docutils literal notranslate"><span class="pre">EverCrypt.HMAC.f
 <h2>Agile API<a class="headerlink" href="#agile-api" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">compute</span></code> function is agile and multiplexing:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span>
-<span class="nf">EverCrypt_HMAC_compute</span><span class="p">(</span>
-  <span class="n">Spec_Hash_Definitions_hash_alg</span> <span class="n">a</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">mac</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">key</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">keylen</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">datalen</span>
-<span class="p">);</span>
+<span class="kt">void</span><span class="w"></span>
+<span class="nf">EverCrypt_HMAC_compute</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">Spec_Hash_Definitions_hash_alg</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">mac</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">key</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">keylen</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">datalen</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
@@ -247,14 +247,14 @@ the <code class="docutils literal notranslate"><span class="pre">data</span></co
 <h2>Non-agile API<a class="headerlink" href="#non-agile-api" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">compute_*</span></code> functions are <strong>non-agile</strong> and multiplexing:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span>
-<span class="nf">EverCrypt_HMAC_compute_sha2_256</span><span class="p">(</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">dst</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">key</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">key_len</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">data_len</span>
-<span class="p">);</span>
+<span class="kt">void</span><span class="w"></span>
+<span class="nf">EverCrypt_HMAC_compute_sha2_256</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">key</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">key_len</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">data_len</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>

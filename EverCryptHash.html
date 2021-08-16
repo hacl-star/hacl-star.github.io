@@ -252,38 +252,38 @@ and as such does not return an error code. This is possible because i) we always
 have a fallback portable C implementation available for all algorithms and ii)
 we do not yet model allocation failures.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="n">Hacl_Streaming_Functor_state_s___EverCrypt_Hash_state_s____</span>
-<span class="o">*</span><span class="nf">EverCrypt_Hash_Incremental_create_in</span><span class="p">(</span><span class="n">Spec_Hash_Definitions_hash_alg</span> <span class="n">a</span><span class="p">);</span>
+<span class="n">Hacl_Streaming_Functor_state_s___EverCrypt_Hash_state_s____</span><span class="w"></span>
+<span class="o">*</span><span class="nf">EverCrypt_Hash_Incremental_create_in</span><span class="p">(</span><span class="n">Spec_Hash_Definitions_hash_alg</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
 <p>Clients can feed an arbitrary amount of data via <code class="docutils literal notranslate"><span class="pre">update</span></code>:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span>
-<span class="nf">EverCrypt_Hash_Incremental_update</span><span class="p">(</span>
-  <span class="n">Hacl_Streaming_Functor_state_s___EverCrypt_Hash_state_s____</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">len</span>
-<span class="p">);</span>
+<span class="kt">void</span><span class="w"></span>
+<span class="nf">EverCrypt_Hash_Incremental_update</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">Hacl_Streaming_Functor_state_s___EverCrypt_Hash_state_s____</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">len</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
 <p>A hash can be extracted at any time by the client without invalidating the
 state:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span>
-<span class="nf">EverCrypt_Hash_Incremental_finish_md5</span><span class="p">(</span>
-  <span class="n">Hacl_Streaming_Functor_state_s___EverCrypt_Hash_state_s____</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">dst</span>
-<span class="p">);</span>
+<span class="kt">void</span><span class="w"></span>
+<span class="nf">EverCrypt_Hash_Incremental_finish_md5</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">Hacl_Streaming_Functor_state_s___EverCrypt_Hash_state_s____</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
 <p>Once done, clients should use <code class="docutils literal notranslate"><span class="pre">free</span></code> which frees all internal buffers and
 underlying block-based state:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span>
-<span class="nf">EverCrypt_Hash_Incremental_free</span><span class="p">(</span><span class="n">Hacl_Streaming_Functor_state_s___EverCrypt_Hash_state_s____</span> <span class="o">*</span><span class="n">s</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"></span>
+<span class="nf">EverCrypt_Hash_Incremental_free</span><span class="p">(</span><span class="n">Hacl_Streaming_Functor_state_s___EverCrypt_Hash_state_s____</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
@@ -298,13 +298,13 @@ agility and multiplexing to enjoy the streaming hash API.</p>
 <p>If all data is available at once, clients can use the (slightly more efficient),
 agile, multiplexing <code class="docutils literal notranslate"><span class="pre">EverCrypt_Hash_hash</span></code> function.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span>
-<span class="nf">EverCrypt_Hash_hash</span><span class="p">(</span>
-  <span class="n">Spec_Hash_Definitions_hash_alg</span> <span class="n">a</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">dst</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">input</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">len</span>
-<span class="p">);</span>
+<span class="kt">void</span><span class="w"></span>
+<span class="nf">EverCrypt_Hash_hash</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">Spec_Hash_Definitions_hash_alg</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">len</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
@@ -313,7 +313,7 @@ variants. As such, the cost of agility is one test.</p>
 <p>For SHA2-256 and SHA2-224, the EverCrypt API provides non-agile, multiplexing
 variants:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span> <span class="nf">EverCrypt_Hash_hash_256</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">input</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">input_len</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">dst</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">EverCrypt_Hash_hash_256</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">input_len</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>

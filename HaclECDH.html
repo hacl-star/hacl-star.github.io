@@ -215,12 +215,12 @@ such as HKDF.</p>
 <p>Given a private key, the corresponding public key can be computed
 using the <code class="docutils literal notranslate"><span class="pre">secret_to_public</span></code> function:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span> <span class="nf">Hacl_Curve25519_51_secret_to_public</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">pub</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">priv</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Hacl_Curve25519_51_secret_to_public</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">pub</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">priv</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span> <span class="nf">Hacl_Curve25519_64_secret_to_public</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">pub</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">priv</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Hacl_Curve25519_64_secret_to_public</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">pub</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">priv</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
@@ -231,12 +231,12 @@ the second argument is a pointer to the input private key <code class="docutils 
 <h2>ECDH Shared Secret<a class="headerlink" href="#ecdh-shared-secret" title="Permalink to this headline">¶</a></h2>
 <p>The ECDH operation is implemented by the following function:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">bool</span> <span class="nf">Hacl_Curve25519_51_ecdh</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">out</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">priv</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">pub</span><span class="p">);</span>
+<span class="kt">bool</span><span class="w"> </span><span class="nf">Hacl_Curve25519_51_ecdh</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">out</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">priv</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">pub</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">bool</span> <span class="nf">Hacl_Curve25519_64_ecdh</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">out</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">priv</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">pub</span><span class="p">);</span>
+<span class="kt">bool</span><span class="w"> </span><span class="nf">Hacl_Curve25519_64_ecdh</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">out</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">priv</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">pub</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>

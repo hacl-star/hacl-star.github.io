@@ -219,17 +219,17 @@ expansion and precomputes internal data for AES-GCM. <code class="docutils liter
 IV reduction, meaning that IV lengths must satisfy the <code class="docutils literal notranslate"><span class="pre">iv_length</span></code> predicate
 in <code class="docutils literal notranslate"><span class="pre">Spec.Agile.AEAD.fsti</span></code>.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="n">EverCrypt_Error_error_code</span>
-<span class="nf">EverCrypt_AEAD_create_in</span><span class="p">(</span><span class="n">Spec_Agile_AEAD_alg</span> <span class="n">a</span><span class="p">,</span> <span class="n">EverCrypt_AEAD_state_s</span> <span class="o">**</span><span class="n">dst</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">k</span><span class="p">);</span>
+<span class="n">EverCrypt_Error_error_code</span><span class="w"></span>
+<span class="nf">EverCrypt_AEAD_create_in</span><span class="p">(</span><span class="n">Spec_Agile_AEAD_alg</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">EverCrypt_AEAD_state_s</span><span class="w"> </span><span class="o">**</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">k</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
 <p>The type <code class="docutils literal notranslate"><span class="pre">EverCrypt_AEAD_state_s</span></code> is a C abstract type which cannot be
 allocated by clients, as is it an incomplete struct type. Therefore, the
 expected usage for initialization is:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">EverCrypt_AEAD_state_s</span> <span class="o">*</span><span class="n">dst</span><span class="p">;</span>
-<span class="n">EverCrypt_Error_error</span> <span class="n">ret</span> <span class="o">=</span>
-  <span class="n">EverCrypt_AEAD_create_in</span><span class="p">(</span><span class="n">Spec_Agile_AEAD_CHACHA20_POLY1305</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">dst</span><span class="p">,</span> <span class="n">key</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">EverCrypt_AEAD_state_s</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">;</span><span class="w"></span>
+<span class="n">EverCrypt_Error_error</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">  </span><span class="n">EverCrypt_AEAD_create_in</span><span class="p">(</span><span class="n">Spec_Agile_AEAD_CHACHA20_POLY1305</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Possible error codes can be determined by looking at the original F* signature
@@ -241,7 +241,7 @@ or <code class="docutils literal notranslate"><span class="pre">UnsupportedAlgor
 platform (e.g. AES-GCM without ADX+BMI2).</p>
 <p>State <strong>must</strong> be freed via the <code class="docutils literal notranslate"><span class="pre">free</span></code> function:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span> <span class="nf">EverCrypt_AEAD_free</span><span class="p">(</span><span class="n">EverCrypt_AEAD_state_s</span> <span class="o">*</span><span class="n">s</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">EverCrypt_AEAD_free</span><span class="p">(</span><span class="n">EverCrypt_AEAD_state_s</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
@@ -257,18 +257,18 @@ deciphering F* code.</p>
 <code class="docutils literal notranslate"><span class="pre">InvalidKey</span></code>. The latter is returned if and only if the <code class="docutils literal notranslate"><span class="pre">s</span></code> parameter is
 <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="n">EverCrypt_Error_error_code</span>
-<span class="nf">EverCrypt_AEAD_encrypt</span><span class="p">(</span>
-  <span class="n">EverCrypt_AEAD_state_s</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">iv</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">iv_len</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">ad</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">ad_len</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">plain</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">plain_len</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">cipher</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">tag</span>
-<span class="p">);</span>
+<span class="n">EverCrypt_Error_error_code</span><span class="w"></span>
+<span class="nf">EverCrypt_AEAD_encrypt</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">EverCrypt_AEAD_state_s</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">iv</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">iv_len</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">ad</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ad_len</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">plain</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">plain_len</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">cipher</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">tag</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
@@ -282,18 +282,18 @@ definition of <code class="docutils literal notranslate"><span class="pre">tag_l
 to perform a run-time check!</strong></p>
 </div>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="n">EverCrypt_Error_error_code</span>
-<span class="nf">EverCrypt_AEAD_decrypt</span><span class="p">(</span>
-  <span class="n">EverCrypt_AEAD_state_s</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">iv</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">iv_len</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">ad</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">ad_len</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">cipher</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">cipher_len</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">tag</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">dst</span>
-<span class="p">);</span>
+<span class="n">EverCrypt_Error_error_code</span><span class="w"></span>
+<span class="nf">EverCrypt_AEAD_decrypt</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">EverCrypt_AEAD_state_s</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">iv</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">iv_len</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">ad</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ad_len</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">cipher</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">cipher_len</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">tag</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>

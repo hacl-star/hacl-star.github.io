@@ -197,17 +197,17 @@ as described in the NIST publication <a class="reference external" href="https:/
 for these hash functions is in the file <code class="docutils literal notranslate"><span class="pre">Hacl_Hash.h</span></code>.</p>
 <p>The types for SHA-256, SHA-384, and SHA-512 are as follows:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span> <span class="nf">Hacl_Hash_SHA2_hash_256</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">input</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">input_len</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">dst</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Hacl_Hash_SHA2_hash_256</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">input_len</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span> <span class="nf">Hacl_Hash_SHA2_hash_384</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">input</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">input_len</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">dst</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Hacl_Hash_SHA2_hash_384</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">input_len</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span> <span class="nf">Hacl_Hash_SHA2_hash_512</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">input</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">input_len</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">dst</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Hacl_Hash_SHA2_hash_512</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">input_len</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
@@ -225,17 +225,17 @@ SHA-512 it must have 64 bytes. The <code class="docutils literal notranslate"><s
 described in the NIST publication <a class="reference external" href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf">FIPS PUB 202: SHA-3 Standard</a>. The API for
 these hash functions is in the file <code class="docutils literal notranslate"><span class="pre">Hacl_SHA3.h</span></code>.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span> <span class="nf">Hacl_SHA3_sha3_256</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">inputByteLen</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">input</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">output</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Hacl_SHA3_sha3_256</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">inputByteLen</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">output</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span> <span class="nf">Hacl_SHA3_sha3_384</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">inputByteLen</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">input</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">output</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Hacl_SHA3_sha3_384</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">inputByteLen</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">output</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span> <span class="nf">Hacl_SHA3_sha3_512</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">inputByteLen</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">input</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">output</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Hacl_SHA3_sha3_512</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">inputByteLen</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">output</span><span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
@@ -253,24 +253,24 @@ that can produce arbitrary size digests and hence also take
 an <code class="docutils literal notranslate"><span class="pre">outputByteLen</span></code> as argument. These functions expect the
 <code class="docutils literal notranslate"><span class="pre">output</span></code> array to have at least <code class="docutils literal notranslate"><span class="pre">outputByteLen</span></code> bytes</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span>
-<span class="nf">Hacl_SHA3_shake128_hacl</span><span class="p">(</span>
-  <span class="kt">uint32_t</span> <span class="n">inputByteLen</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">input</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">outputByteLen</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">output</span>
-<span class="p">);</span>
+<span class="kt">void</span><span class="w"></span>
+<span class="nf">Hacl_SHA3_shake128_hacl</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">inputByteLen</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">outputByteLen</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">output</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
-<span class="kt">void</span>
-<span class="nf">Hacl_SHA3_shake256_hacl</span><span class="p">(</span>
-  <span class="kt">uint32_t</span> <span class="n">inputByteLen</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">input</span><span class="p">,</span>
-  <span class="kt">uint32_t</span> <span class="n">outputByteLen</span><span class="p">,</span>
-  <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">output</span>
-<span class="p">);</span>
+<span class="kt">void</span><span class="w"></span>
+<span class="nf">Hacl_SHA3_shake256_hacl</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">inputByteLen</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">outputByteLen</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">output</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
 
 </pre></div>
 </div>
